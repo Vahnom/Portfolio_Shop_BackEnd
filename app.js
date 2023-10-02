@@ -1,6 +1,6 @@
 import express from 'express';
 // import bodyParser from 'body-parser';
-import productRoutes from './routes/productRoutes.js'
+import productRoutes from './src/routes/productRoutes.js'
 import cors from 'cors';
 
 const APP = express();
@@ -23,9 +23,9 @@ try {
 
 
 
-export const server = APP.listen(4000,() =>{
-    console.log('Server running in http://localhost:4000/')
-    } )
+export const server = APP.listen(0,() =>{
+    console.log('Server running in PORT:', server.address().port)
+    })
 
 
 
