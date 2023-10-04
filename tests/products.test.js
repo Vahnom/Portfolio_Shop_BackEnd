@@ -1,10 +1,9 @@
-
-
-describe("Test de CRUD books",() =>{
-    describe("GET /books", () =>{
+import app from 'app.js'
+describe("Test de CRUD products",() =>{
+    describe("GET /product", () =>{
         let response;
         beforeEach(async()=>{
-            response = await request(app).get('/books').send()
+            response = await req(app).get('/products').send()
         })
         test('should return a response with status 200 and type json, when I send a Get request', async() => {
             expect(response.status).toBe(200);
