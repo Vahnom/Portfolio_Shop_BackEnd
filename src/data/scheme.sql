@@ -41,3 +41,9 @@ CREATE TABLE shopping_chart (
   product_quantity int,
   paying_method_id int
 );
+
+CREATE TABLE product_sections(
+id int PRIMARY KEY  auto_increment not null,
+section_name varchar(255) not null
+
+);

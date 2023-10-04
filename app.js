@@ -1,6 +1,7 @@
 import express from 'express';
 // import bodyParser from 'body-parser';
-import productRoutes from './routes/productRoutes.js'
+import productRoutes from './src/routes/productRoutes.js'
+import sectionRoutes from './src/routes/sectionRoutes.js'
 import cors from 'cors';
 
 const APP = express();
@@ -9,6 +10,7 @@ const APP = express();
 APP.use(cors());
 APP.use(express.json());
 APP.use('/products', productRoutes)
+APP.use('/sections', sectionRoutes)
 
 
 APP.get('/', (req,res) => {res.send('Hello from Home Page');})
@@ -23,9 +25,9 @@ try {
 
 
 
-export const server = APP.listen(4000,() =>{
-    console.log('Server running in http://localhost:4000/')
-    } )
+export const server = APP.listen(0,() =>{
+    console.log(`Server running in PORT:, http://localhost:${server.address().port}`)
+    })
 
 
 
